@@ -48,3 +48,7 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+## UI/UX Figma Link
+
+Link : https://www.figma.com/design/G8uoBQpxHomZMTAPH22mGC/Untitled?node-id=0-1&t=8oebat27ddaMTxc2-1

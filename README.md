@@ -1,10 +1,10 @@
-# Welcome to your Expo app 👋
+# Kangkeliling APP 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+bismillah garudahacks
 
 ## Get started
 
-1. Install dependencies
+1. Buat Install
 
    ```bash
    npm install

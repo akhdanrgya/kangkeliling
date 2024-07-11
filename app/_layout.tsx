@@ -1,9 +1,11 @@
 import React from "react";
 
-import { Slot } from "expo-router";
+import { Slot, Stack } from "expo-router";
 
 const _layout = () => {
-  return <Slot />;
+  return (
+    <Slot/>
+  );
 };
 
 export default _layout;

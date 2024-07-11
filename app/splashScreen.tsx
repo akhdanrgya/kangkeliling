@@ -15,9 +15,9 @@ const style = StyleSheet.create({
   text : {
     color : "#FCA311",
     fontFamily : "bebas",
-    fontSize : 24,
-    textAlign : "center"
+    fontSize : 24
   }
+
 
 });
 

@@ -1,10 +1,13 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
+import SplashScreen from './splashScreen'
 
 const index = () => {
+    const [loading, setLoadign] = useState(true)
+
   return (
     <View>
-      <Text>index</Text>
+      <SplashScreen/>
     </View>
   )
 }

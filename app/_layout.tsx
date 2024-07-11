@@ -1,13 +1,9 @@
+import React from "react";
 
-import React from 'react'
-import { Stack } from 'expo-router'
+import { Slot } from "expo-router";
 
 const _layout = () => {
-  return (
-    <Stack>
-      <Stack.Screen name='index'/>
-    </Stack>
-  )
-}
+  return <Slot />;
+};
 
-export default _layout
+export default _layout;

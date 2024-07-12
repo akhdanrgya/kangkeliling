@@ -432,7 +432,7 @@ const App = () => {
                     longitude: pedagangItem.longitude,
                   }}
                   title={pedagangItem.namaDagangan}
-                  description="Lokasi Pedagang"
+                  description="Aku Disini!"
                   onPress={() => {
                     setSelectedPedagang(pedagangItem);
                     setOpenBottom(!openBottom);

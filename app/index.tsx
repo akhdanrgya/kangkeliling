@@ -13,7 +13,7 @@ const App = () => {
   useEffect(() => {
     const splashTimeout = setTimeout(() => {
       setShowSplash(false);
-    }, 3000);
+    }, 5000);
 
     const fetchSession = async () => {
       const { data: { session } } = await supabase.auth.getSession();

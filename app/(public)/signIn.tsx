@@ -61,7 +61,7 @@ const SignIn = () => {
         onChangeText={(password) => setPassword(password)}
         secureTextEntry={true}
       />
-      <Link href={"/home"} style={Styles.forgotPassword}>
+      <Link href={"/"} style={Styles.forgotPassword}>
         Forgot Password?
       </Link>
       

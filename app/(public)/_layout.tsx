@@ -1,13 +1,18 @@
-import React, {useState, useEffect} from "react"
-import { Stack, Slot } from "expo-router"
+import { Stack } from "expo-router";
+import OnBoardHeader from "@/components/onBoardHeader";
 
-const _layout = () => {
+export default function AuthRoutesLayout() {
+
   return (
     <Stack>
-        <Stack.Screen name="signIn"/>
-        <Stack.Screen name="signUp"/>
+      <Stack.Screen
+        name="signIn"
+        options={{ header: () => <OnBoardHeader />, headerTransparent: true }}
+      />
+      <Stack.Screen
+        name="signUp"
+        options={{ header: () => <OnBoardHeader />, headerTransparent: true }}
+      />
     </Stack>
-  )
+  );
 }
-
-export default _layout

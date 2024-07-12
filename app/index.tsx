@@ -1,43 +1,53 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React, {useState, useEffect} from 'react'
-import SplashScreen from './splashScreen'
-import { useRouter } from 'expo-router'
+import React, { useState, useEffect } from "react";
+import { useRouter } from "expo-router";
+import SplashScreen from "./splashScreen";
+import { supabase } from "@/libs/supabase";
+import { Session } from "@supabase/supabase-js";
+import { View } from "react-native";
 
-const index = () => {
-  const [loading, setLoading] = useState(true)
-  const router = useRouter()
+const App = () => {
+  const [showSplash, setShowSplash] = useState(true);
+  const [session, setSession] = useState<Session | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const splashTimeout = setTimeout(() => {
-      setLoading(false)
-    }, 3000)
+      setShowSplash(false);
+    }, 3000);
+
+    const fetchSession = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      setSession(session);
+    };
+
+    fetchSession();
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
 
     return () => {
-      clearTimeout(splashTimeout)
-    }
-  }, [])
+      clearTimeout(splashTimeout);
+      subscription.unsubscribe();
+    };
+  }, []);
 
-  if(!loading) {
-    router.replace('/signIn')
-  }
+  useEffect(() => {
+    if (!showSplash) {
+      if (session && session.user) {
+        router.replace('/home');
+        console.log("Anjay login")
+      } else {
+        router.replace('/signIn');
+      }
+    }
+  }, [showSplash, session]);
 
   return (
-    <View style = {Style.container}>
-      <SplashScreen/>
+    <View>
+      {showSplash ? <SplashScreen /> : null}
     </View>
-  )
-}
+  );
+};
 
-const Style = StyleSheet.create({
-  container : {
-    justifyContent : "center",
-    alignItems : 'center',
-    display : 'flex',
-    flex : 1,
-    backgroundColor : '#14213D'
-  }
-
-
-})
-
-export default index
+export default App;

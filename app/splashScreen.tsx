@@ -4,20 +4,26 @@ import { StyleSheet } from "react-native";
 
 const SplashScreen = () => {
   return (
-    <View>
+    <View style={style.container}>
       <Text style={style.text}>KANGKELILING</Text>
     </View>
   );
 };
 
 const style = StyleSheet.create({
+  container: {
+    justifyContent: "center",
+    alignItems: "center",
+    display: "flex",
+    flex: 1,
+    backgroundColor : "#14213D"
+  },
 
   text : {
     color : "#FCA311",
     fontFamily : "bebas",
     fontSize : 24
   }
-
 
 });
 
